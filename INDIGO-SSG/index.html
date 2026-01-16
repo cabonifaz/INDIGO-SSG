@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIGO SSG | Saneamiento y Servicios Generales</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* --- PALETA DE COLORES --- */
+            --primary: #6a1b9a;
+            /* Morado Principal */
+            --primary-dark: #4a148c;
+            /* Morado Oscuro */
+            --secondary: #d580ff;
+            /* Lila */
+            --accent: #00d2ff;
+            /* Celeste (Cyan) */
+
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --light-bg: #f8faff;
+            --green: #25d366;
+            /* Verde WhatsApp */
+
+            /* Fondo azul muy oscuro para el footer */
+            --footer-bg: #0b1120;
+            --footer-text: #94a3b8;
+
+            --shadow-card: 0 10px 30px -5px rgba(106, 27, 154, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .btn,
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* Títulos de Sección */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h4 {
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--primary);
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .main-logo {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .btn-header {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+        }
+
+        .btn-header:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO --- */
+/* Busca este bloque en tu CSS y actualízalo así: */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    
+    /* CAMBIO AQUÍ: Pon el nombre exacto de tu archivo entre comillas simples */
+    background: url('Gemini_Generated_Image_65io5x65io5x65io.png') center/cover no-repeat;
+    
+    overflow: visible;
+}
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(74, 20, 140, 0.92) 0%, rgba(106, 27, 154, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            border-left: 5px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-hero-pri {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-hero-pri:hover {
+            background: transparent;
+            color: var(--white);
+        }
+
+        .btn-hero-sec {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-hero-sec:hover {
+            color: var(--accent);
+        }
+
+        /* --- NOSOTROS (Misión/Visión) --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            border-top: 5px solid var(--primary);
+            transition: 0.3s;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mv-card.vision {
+            border-top-color: var(--accent);
+        }
+
+        .mv-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .mv-title i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .mv-title h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .vision .mv-title i {
+            color: var(--accent);
+        }
+
+        /* --- NUEVO DISEÑO: NOSOTROS MODERNO --- */
+        .about-modern-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* Lado de la Imagen */
+        .about-image-side {
+            position: relative;
+        }
+
+        .about-main-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Elemento decorativo detrás de la imagen (cuadro morado) */
+        .about-bg-shape {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--accent);
+            border-radius: 20px;
+            z-index: 0;
+        }
+
+        /* Insignia flotante sobre la imagen */
+        .about-badge {
+            position: absolute;
+            bottom: 30px;
+            right: -20px;
+            background: var(--white);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 2;
+            border-left: 5px solid var(--primary);
+        }
+
+        .about-badge i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .about-badge div h4 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin: 0;
+        }
+
+        .about-badge div span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        /* Lado del Texto */
+        .about-content-side h4 {
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .about-content-side h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-desc {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+
+        /* Cajas de Misión/Visión Modernas */
+        .mv-modern-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #f0f0f0;
+            transition: 0.3s;
+        }
+
+        .mv-modern-row:hover {
+            border-color: var(--accent);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transform: translateX(10px);
+        }
+
+        .mv-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(106, 27, 154, 0.1);
+            /* Morado suave */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .mv-modern-row:nth-child(2) .mv-icon {
+            background: rgba(0, 210, 255, 0.1);
+            /* Celeste suave */
+            color: var(--primary-dark);
+        }
+
+        .mv-text h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .mv-text p {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-modern-wrapper {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .about-main-img {
+                height: 350px;
+            }
+
+            .about-badge {
+                right: 0;
+                bottom: -20px;
+            }
+
+            .about-bg-shape {
+                display: none;
+            }
+        }
+
+        /* --- SERVICIOS PRINCIPALES (Grid con Imágenes) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+            padding-bottom: 25px;
+            /* Espacio abajo */
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--accent);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-content {
+            padding: 0 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* --- NUEVO ESTILO: SERVICIOS SPLIT (Mitad y Mitad) --- */
+        .services-split-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Columna Izquierda (Fondo Blanco) */
+        .split-col-left {
+            width: 50%;
+            background-color: var(--white);
+            padding: 80px 5% 80px 10%;
+            /* Ajuste de padding para centrar visualmente */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Columna Derecha (Fondo Morado) */
+        .split-col-right {
+            width: 50%;
+            background-color: var(--primary);
+            /* Morado */
+            padding: 80px 10% 80px 5%;
+            color: white;
+        }
+
+        /* Título Grande en la zona morada */
+        .big-service-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            color: var(--accent);
+            /* Celeste */
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 50px;
+            text-align: right;
+            /* Alineado a la derecha como en la imagen */
+        }
+
+        /* Estilo de cada item de la lista */
+        .service-list-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        /* El cuadro azul del ícono */
+        .s-icon-box {
+            background-color: var(--accent);
+            /* Celeste */
+            min-width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            /* Icono blanco */
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            /* Evita que se aplaste */
+        }
+
+        /* Textos del item */
+        .s-content {
+            width: 100%;
+            border-bottom: 2px solid var(--accent);
+            /* La línea azul abajo */
+            padding-bottom: 15px;
+        }
+
+        /* Títulos de los items (Izquierda oscuro, Derecha blanco) */
+        .split-col-left .s-content h3 {
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .split-col-right .s-content h3 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        /* Descripciones */
+        .split-col-left .s-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .split-col-right .s-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Logo pequeño en la zona blanca */
+        .mini-logo {
+            width: 150px;
+            margin-bottom: 40px;
+        }
+
+        /* Responsive: En celular se pone uno debajo del otro */
+        @media (max-width: 992px) {
+
+            .split-col-left,
+            .split-col-right {
+                width: 100%;
+                padding: 60px 20px;
+            }
+
+            .big-service-title {
+                text-align: left;
+                font-size: 2.5rem;
+            }
+        }
+
+        /* --- NUEVO: DOTACIÓN DE PERSONAL Y VALET PARKING --- */
+        .staffing-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .staffing-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            object-fit: cover;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .staffing-content h4 {
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .staffing-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .staffing-content p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .personnel-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .personnel-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .personnel-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .personnel-list li i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* Iconos en celeste */
+
+        /* --- SERVICIOS ESPECIALIZADOS (Grid con Imágenes) --- */
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .spec-card {
+            background: white;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .spec-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .spec-content {
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .spec-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        .spec-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* --- NUEVO DISEÑO: SANEAMIENTO SUPERPUESTO (OVERLAP) --- */
+        .san-overlap-wrapper {
+            position: relative;
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        /* La imagen de fondo a la izquierda */
+        .san-img-holder {
+            width: 55%;
+            height: 500px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .san-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* La tarjeta blanca con el contenido (flota sobre la imagen) */
+        .san-content-card {
+            width: 55%;
+            /* Se solapa con la imagen */
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            margin-left: -10%;
+            /* TRUCO: Esto hace que se monte encima de la imagen */
+            box-shadow: 0 20px 60px rgba(106, 27, 154, 0.15);
+            /* Sombra morada suave */
+            position: relative;
+            z-index: 10;
+            border-left: 5px solid var(--accent);
+            /* Línea celeste decorativa */
+        }
+
+        /* Tipografía */
+        .san-badge {
+            display: inline-block;
+            background: var(--light-bg);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .san-content-card h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .san-content-card p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* Lista de iconos horizontal */
+        .san-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+
+        .san-feat-item {
+            text-align: center;
+        }
+
+        .san-feat-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .san-feat-item:hover .san-feat-icon {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .san-feat-item span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: block;
+            line-height: 1.2;
+        }
+
+        /* Responsive: En celular se apilan */
+        @media (max-width: 992px) {
+            .san-overlap-wrapper {
+                flex-direction: column;
+            }
+
+            .san-img-holder {
+                width: 100%;
+                height: 300px;
+                margin-bottom: -50px;
+                z-index: 1;
+            }
+
+            .san-content-card {
+                width: 95%;
+                margin-left: 0;
+                padding: 40px 30px;
+                z-index: 2;
+            }
+
+            .san-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: left;
+            }
+
+            .san-feat-item {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .san-feat-icon {
+                margin: 0;
+            }
+        }
+
+        /* --- NUEVO DISEÑO: OTROS SERVICIOS (TARJETAS INTERACTIVAS) --- */
+        .other-modern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            /* Se adaptan al ancho */
+            gap: 30px;
+        }
+
+        .other-card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            /* Sombra muy suave inicial */
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            /* Para que el color no se salga de los bordes */
+            cursor: default;
+            z-index: 1;
+        }
+
+        /* El fondo de color que aparece al pasar el mouse */
+        .other-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            /* Degradado morado */
+            opacity: 0;
+            z-index: -1;
+            /* Se pone detrás del texto */
+            transform: scale(0.8) translateY(50px);
+            /* Empieza pequeño y abajo */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Efecto rebote suave */
+            border-radius: 20px;
+        }
+
+        /* ESTADOS HOVER (Cuando pasas el mouse) */
+        .other-card:hover {
+            transform: translateY(-10px);
+            /* La tarjeta flota hacia arriba */
+            box-shadow: 0 20px 40px rgba(106, 27, 154, 0.2);
+            /* Sombra morada */
+            border-color: transparent;
+        }
+
+        .other-card:hover::before {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            /* El fondo llena la tarjeta */
+        }
+
+        /* Iconos */
+        .other-icon-box {
+            font-size: 2.5rem;
+            color: var(--accent);
+            /* Celeste inicial */
+            margin-bottom: 20px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        /* Título */
+        .other-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+            transition: 0.3s;
+        }
+
+        /* Cambios de color de texto/icono al hacer hover */
+        .other-card:hover .other-icon-box {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .other-card:hover h4 {
+            color: white;
+        }
+
+        /* --- CLIENTES --- */
+        .clients-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            filter: grayscale(100%);
+            transition: 0.4s;
+            opacity: 0.6;
+        }
+
+        .clients-img:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        /* --- CONTACTO --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            background: white;
+            box-shadow: var(--shadow-card);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 60px;
+            color: white;
+        }
+
+        .contact-form {
+            padding: 60px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: #fcfcfc;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 800;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        /* --- BOTÓN WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #1ebe57;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 50px 0 20px;
+            font-size: 0.9rem;
+        }
+
+/* --- FOOTER RESTAURADO (Certificados Ocultos/Invisibles) --- */
+
+.footer-grid-2 {
+    /* Volvemos a la grilla original de 2 columnas */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.footer-col-contact {
+    text-align: left; /* Aseguramos que el contacto esté a la izquierda */
+}
+
+.footer-col-certs {
+    /* AQUÍ ESTÁ EL TRUCO: */
+    opacity: 0; /* Lo hace 100% transparente (invisible) */
+    pointer-events: none; /* Evita que se pueda dar click aunque esté ahí */
+    user-select: none; /* Evita que se pueda seleccionar el texto */
+}
+
+/* En celular sí queremos que desaparezca para que no ocupe espacio innecesario */
+@media (max-width: 992px) {
+    .footer-col-certs {
+        display: none; 
+    }
+    .footer-grid-2 {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col-contact {
+        text-align: center;
+    }
+}
+
+        .footer-logo-img {
+            height: 60px;
+            width: auto;
+            margin-bottom: 25px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .footer-contact-item i {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+       
+
+        .cert-title {
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+        }
+
+        .cert-logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+            align-items: center;
+        }
+
+        .cert-badge {
+            border: 1px solid #334155;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px 10px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .cert-badge:hover {
+            border-color: var(--accent);
+            background: rgba(0, 210, 255, 0.05);
+        }
+
+        .cert-badge i {
+            font-size: 2rem;
+            color: #64748b;
+            display: block;
+            margin-bottom: 5px;
+            transition: 0.3s;
+        }
+
+        .cert-badge span {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            transition: 0.3s;
+        }
+
+        .cert-badge:hover i,
+        .cert-badge:hover span {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 1rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            background: var(--accent);
+            color: var(--footer-bg);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .copyright span {
+            color: var(--accent);
+        }
+
+        @media (max-width: 992px) {
+
+            .about-grid,
+            .san-container,
+            .contact-wrapper,
+            .san-list-grid,
+            .footer-grid-2,
+            .staffing-wrapper,
+            .personnel-list {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero {
+                height: auto;
+                padding: 150px 0 100px;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .san-info {
+                padding: 60px 30px;
+                min-height: 300px;
+            }
+
+            .footer-col-contact,
+            .footer-col-certs {
+                text-align: center;
+            }
+
+            .footer-contact-item {
+                justify-content: center;
+            }
+
+            .cert-title {
+                border-bottom: none;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* --- NUEVO DISEÑO: COMPARATIVA ELEGANTE (SOFT UI) --- */
+        .clean-trans-section {
+            background: linear-gradient(to bottom, #ffffff, #f4f6f9);
+            /* Fondo claro y suave */
+            padding: 100px 0;
+        }
+
+        .clean-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            /* La columna de "Después" es un poco más ancha para destacar */
+            gap: 50px;
+            align-items: start;
+            margin-top: 50px;
+        }
+
+        /* Estilo de las Columnas (Tarjetas flotantes) */
+        .clean-col {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            /* Sombra muy suave */
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+
+        .clean-col:hover {
+            transform: translateY(-5px);
+            /* Flota un poco al pasar el mouse */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Títulos de columna */
+        .clean-header {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-gray {
+            color: #888;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .header-brand {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        /* Contenedores de imagen/video */
+        .clean-media-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .clean-img-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 220px;
+        }
+
+        /* El video destaca más */
+        .clean-video-card {
+            height: 350px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(106, 27, 154, 0.15);
+            /* Sombra morada suave */
+        }
+
+        .clean-img-card img,
+        .clean-video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        /* Efecto zoom suave */
+        .clean-img-card:hover img,
+        .clean-video-card:hover video {
+            transform: scale(1.03);
+        }
+
+        /* Etiquetas minimalistas */
+        .soft-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #444;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        /* Indicador de Video */
+        .play-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            z-index: 2;
+        }
+
+        /* En móvil */
+        @media (max-width: 992px) {
+            .clean-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .clean-video-card {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="https://wa.me/51932449005" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo-wrapper">
+                <img src="Captura_de_pantalla_2026-01-13_111708-removebg-preview.png" alt="INDIGO SSG"
+                    class="main-logo">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#contacto" class="btn-header">COTIZAR AHORA</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-text">
+            <h1>Limpieza Profesional que <br><span style="color: var(--accent);">Refleja tu Imagen</span></h1>
+            <p>Creemos que un espacio limpio no solo se ve bien, sino que también tiene un impacto positivo en la
+                calidad de vida.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-hero-pri">SOLICITAR COTIZACIÓN</a>
+                <a href="#servicios" class="btn-hero-sec">Nuestros Servicios <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="section-padding" style="background: linear-gradient(to right, #fdfbfd, #fff);">
+        <div class="container">
+            <div class="about-modern-wrapper">
+
+                <div class="about-image-side">
+                    <div class="about-bg-shape"></div>
+                    <img src="Captura de pantalla 2026-01-14 125000.png" alt="Equipo Indigo" class="about-main-img">
+
+                    <div class="about-badge">
+                        <i class="fas fa-medal"></i>
+                        <div>
+                            <h4>100%</h4>
+                            <span>Calidad Garantizada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content-side">
+                    <h4>Nuestra Esencia</h4>
+                    <h2>Compromiso Total con<br><span style="color: var(--primary);">Espacios Impecables</span></h2>
+                    <p class="about-desc">
+                        En INDIGO SSG entendemos que la limpieza va más allá de la estética; se trata de salud,
+                        seguridad y bienestar. Transformamos ambientes comunes en espacios extraordinarios mediante
+                        procesos certificados y un equipo humano apasionado.
+                    </p>
+
+                    <div class="mv-modern-row">
+                        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="mv-text">
+                            <h3>Nuestra Misión</h3>
+                            <p>Crear entornos saludables y acogedores mediante prácticas de limpieza innovadoras,
+                                sostenibles y respetuosas con el medio ambiente.</p>
+                        </div>
+                    </div>
+
+                    <div class="mv-modern-row">
+                        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                        <div class="mv-text">
+                            <h3>Nuestra Visión</h3>
+                            <p>Ser el referente nacional en servicios de saneamiento, reconocidos por nuestra excelencia
+                                operativa y nuestro impacto social positivo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" style="overflow: hidden;">
+        <div class="services-split-container">
+
+            <div class="split-col-left">
+                <img src="Captura_de_pantalla_2026-01-13_111708-removebg-preview.png" alt="Indigo Logo"
+                    class="mini-logo">
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-briefcase"></i></div>
+                    <div class="s-content">
+                        <h3>Limpieza de Oficina</h3>
+                        <p>Mantiene áreas de trabajo limpias y saludables para impulsar la productividad y el bienestar
+                            en su empresa.</p>
+                    </div>
+                </div>
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-hospital"></i></div>
+                    <div class="s-content">
+                        <h3>Limpieza de Hospitales</h3>
+                        <p>Desarrollamos técnicas y programas ejecutados por personal calificado para minimizar la
+                            contaminación en áreas médicas.</p>
+                    </div>
+                </div>
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-industry"></i></div>
+                    <div class="s-content">
+                        <h3>Limpieza de Plantas Industriales</h3>
+                        <p>Priorizamos la seguridad industrial que es clave para el correcto desempeño de sus labores y
+                            la calidad en el servicio.</p>
+                    </div>
+                </div>
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-window-maximize"></i></div>
+                    <div class="s-content">
+                        <h3>Limpieza en Altura</h3>
+                        <p>Personal altamente calificado y equipos especializados. Cubrimos los riesgos con pólizas SCTR
+                            y responsabilidad civil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split-col-right">
+
+                <h2 class="big-service-title">SERVICIOS<br>PRINCIPALES</h2>
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-school"></i></div>
+                    <div class="s-content">
+                        <h3>Limpieza de Centros de Estudios</h3>
+                        <p>Priorizamos la limpieza de centros educativos para proteger la salud de la próxima
+                            generación.</p>
+                    </div>
+                </div>
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-store"></i></div>
+                    <div class="s-content">
+                        <h3>Limpieza de Centros Comerciales</h3>
+                        <p>Una correcta limpieza facilita la venta, garantiza la seguridad de los usuarios y ofrece una
+                            experiencia satisfactoria.</p>
+                    </div>
+                </div>
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-gem"></i></div>
+                    <div class="s-content">
+                        <h3>Cristalización y Abrillantado</h3>
+                        <p>El cristalizado y encerado de suelos ofrece brillo natural duradero, fácil mantenimiento y
+                            buena imagen.</p>
+                    </div>
+                </div>
+
+                <div class="service-list-item">
+                    <div class="s-icon-box"><i class="fas fa-building"></i></div>
+                    <div class="s-content">
+                        <h3>Limpieza de Fachadas</h3>
+                        <p>La limpieza mecánica de fachadas se puede hacer manualmente o con hidrolavadora, según la
+                            suciedad.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="staffing-wrapper">
+                <div class="staffing-img">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000"
+                        alt="Dotación de Personal">
+                </div>
+                <div class="staffing-content">
+                    <h4>SOLUCIONES DE PERSONAL</h4>
+                    <h2>Intermediación Laboral y <br><span style="color: var(--accent);">Dotación De Personal</span>
+                    </h2>
+                    <p>Dotamos personal calificado para las distintas necesidades de nuestros clientes, asegurando la
+                        mejor imagen y eficiencia operativa.</p>
+
+                    <div class="personnel-list">
+                        <ul>
+                            <li><i class="fas fa-car"></i> Valet Parking</li>
+                            <li><i class="fas fa-id-card"></i> Choferes</li>
+                            <li><i class="fas fa-motorcycle"></i> Motorizados</li>
+                            <li><i class="fas fa-concierge-bell"></i> Conserjes</li>
+                            <li><i class="fas fa-keyboard"></i> Digitadores</li>
+                            <li><i class="fas fa-user-friends"></i> Auxiliares</li>
+                        </ul>
+                        <ul>
+                            <li><i class="fas fa-boxes"></i> Almaceneros</li>
+                            <li><i class="fas fa-box-open"></i> Empaquetadores</li>
+                            <li><i class="fas fa-box"></i> Embaladores</li>
+                            <li><i class="fas fa-user-tie"></i> Recepcionistas</li>
+                            <li><i class="fas fa-headset"></i> Telefonistas</li>
+                            <li><i class="fas fa-tasks"></i> Apoyo Operativo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h4>Atención al Detalle</h4>
+                <h2>Servicios Especializados</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="spec-grid">
+                <div class="spec-card">
+                    <img src="Captura de pantalla 2026-01-14 123808.png" alt="Lavado de Alfombras" class="spec-img">
+                    <div class="spec-content">
+                        <h3>Lavado de Alfombras</h3>
+                        <p>Es importante cuidar las alfombras como si fueran prendas personales para conservarlas y
+                            prolongar su durabilidad.</p>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <img src="Captura de pantalla 2026-01-14 123823.png" alt="Lavado de Vehículos" class="spec-img">
+                    <div class="spec-content">
+                        <h3>Lavado de Vehículos</h3>
+                        <p>Incluye limpiar asientos, maletero, techo, piso, alfombras y cinturones, aspirar y usar
+                            productos especiales.</p>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <img src="Captura de pantalla 2026-01-14 123836.png" alt="Jardinería" class="spec-img">
+                    <div class="spec-content">
+                        <h3>Jardinería</h3>
+                        <p>Corte de césped, mantenimiento, abonado, poda, trasplante de plantas y asistencia de personal
+                            calificado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clean-trans-section">
+        <div class="container">
+            <div class="section-title">
+                <h4 style="color: var(--accent);">Portafolio de Proyectos</h4>
+                <h2 style="color: var(--primary);">Transformación Real</h2>
+                <div class="divider"></div>
+                <p style="color: var(--text-light); margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    La diferencia entre limpiar y restaurar. Vea cómo recuperamos el brillo y la vida útil de las
+                    instalaciones industriales.
+                </p>
+            </div>
+
+            <div class="clean-grid">
+
+                <div class="clean-col">
+                    <div class="clean-header header-gray">
+                        <i class="fas fa-clock"></i> Estado Inicial
+                    </div>
+
+                    <div class="clean-media-wrapper">
+                        <div class="clean-img-card">
+                            <span class="soft-badge">Desgaste Severo</span>
+                            <img src="WhatsApp Image 2026-01-14 at 9.45.03 AM.jpeg" alt="Antes Piso"
+                                style="filter: grayscale(30%);">
+                        </div>
+                        <div class="clean-img-card">
+                            <span class="soft-badge">Áreas sin Tratamiento</span>
+                            <img src="WhatsApp Image 2026-01-14 at 9.45.03 AM (3).jpeg" alt="Antes Almacen"
+                                style="filter: grayscale(30%);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clean-col" style="border-color: var(--secondary);">
+                    <div class="clean-header header-brand">
+                        <i class="fas fa-star"></i> Resultado Profesional
+                    </div>
+
+                    <div class="clean-media-wrapper">
+                        <div class="clean-video-card">
+                            <span class="soft-badge" style="color: var(--primary);">Video en Vivo</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="WhatsApp Video 2026-01-14 at 9.45.04 AM.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="clean-img-card" style="height: 180px;">
+                                <span class="soft-badge">Brillo Espejo</span>
+                                <img src="WhatsApp Image 2026-01-14 at 9.45.04 AM.jpeg" alt="Despues Brillo">
+                            </div>
+                            <div class="clean-img-card" style="height: 180px;">
+                                <span class="soft-badge">Proceso Técnico</span>
+                                <img src="WhatsApp Image 2026-01-14 at 9.45.04 AM (2).jpeg" alt="Personal Trabajando">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="san-overlap-wrapper">
+
+            <div class="san-img-holder">
+                <img src="https://www.sws.com.pe/wp-content/uploads/2025/07/Desinsectacion-scaled.png"
+                    alt="Fumigación Profesional">
+            </div>
+
+            <div class="san-content-card">
+                <span class="san-badge"><i class="fas fa-certificate"></i> Certificación DIGESA</span>
+
+                <h2>Saneamiento Ambiental Certificado</h2>
+
+                <p>Protegemos la salud de su personal y clientes. Nuestros procesos de desinfección eliminan patógenos y
+                    plagas utilizando productos biodegradables y autorizados, garantizando espacios 100% seguros e
+                    inocuos.</p>
+
+                <div class="san-features">
+                    <div class="san-feat-item">
+                        <div class="san-feat-icon"><i class="fas fa-spray-can"></i></div>
+                        <span>Desinfección<br>Total</span>
+                    </div>
+                    <div class="san-feat-item">
+                        <div class="san-feat-icon"><i class="fas fa-bug"></i></div>
+                        <span>Control de<br>Plagas</span>
+                    </div>
+                    <div class="san-feat-item">
+                        <div class="san-feat-icon"><i class="fas fa-shield-virus"></i></div>
+                        <span>Prevención<br>Roedores</span>
+                    </div>
+                </div>
+
+                <a href="#contacto" class="btn-header" style="display: inline-block; text-align: center;">COTIZAR
+                    FUMIGACIÓN</a>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="section-padding" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-title">
+                <h4>Complementarios</h4>
+                <h2>Otros Servicios Generales</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="other-modern-grid">
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-paint-roller"></i></div>
+                    <h4>Pintura General</h4>
+                </div>
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-wrench"></i></div>
+                    <h4>Gasfitería</h4>
+                </div>
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-trowel"></i></div>
+                    <h4>Albañilería</h4>
+                </div>
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-bolt"></i></div>
+                    <h4>Instalaciones Eléctricas</h4>
+                </div>
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-hammer"></i></div>
+                    <h4>Carpintería</h4>
+                </div>
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-wind"></i></div>
+                    <h4>Aire Acondicionado</h4>
+                </div>
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-layer-group"></i></div>
+                    <h4>Drywall</h4>
+                </div>
+
+                <div class="other-card">
+                    <div class="other-icon-box"><i class="fas fa-charging-station"></i></div>
+                    <h4>Pozo a Tierra</h4>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="clientes" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Confían en Nosotros</h2>
+                <div class="divider"></div>
+            </div>
+            <div style="text-align: center;">
+                <img src="Captura de pantalla 2026-01-13 094854.png" alt="Nuestros Clientes" class="clients-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section-padding" style="background: linear-gradient(to bottom, #fff, #f8fafc);">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Conversemos</h2>
+                    <p style="opacity: 0.9; margin-bottom: 40px;">Estamos listos para transformar sus espacios con
+                        soluciones a medida.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h5 style="color: var(--accent); margin-bottom: 5px; font-size: 1.2rem;">Juan Casanova</h5>
+                        <p style="font-size: 0.95rem;">Gerente Comercial</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--accent);"></i>
+                        <span style="font-size: 1.1rem;">info@indigossg.com</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fas fa-phone-alt" style="font-size: 1.5rem; color: var(--accent);"></i>
+                            <span style="font-size: 1.1rem;">+51 982 559 337</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fab fa-whatsapp" style="font-size: 1.5rem; color: var(--accent);"></i>
+                            <span style="font-size: 1.1rem;">+51 932 449 005</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="color: var(--primary); margin-bottom: 30px;">Formulario de Contacto</h3>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Nombre completo" required>
+                        <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                        <input type="tel" class="form-control" placeholder="Teléfono" required>
+                        <textarea rows="4" class="form-control" placeholder="Describa su requerimiento..."></textarea>
+                        <button type="submit" class="btn-submit">ENVIAR CONSULTA</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid-2">
+
+                <div class="footer-col-contact">
+                    <img src="Captura_de_pantalla_2026-01-13_111708-removebg-preview.png" alt="INDIGO SSG"
+                        class="footer-logo-img">
+
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lima, Perú</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+51 982 559 337</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@indigossg.com</span>
+                    </div>
+                </div>
+
+                <div class="footer-col-certs">
+                    <div class="cert-title">Certificaciones de Calidad</div>
+                    <div class="cert-logos-grid">
+                        <div class="cert-badge"><i class="fas fa-certificate"></i><span>ISO 9001</span></div>
+                        <div class="cert-badge"><i class="fas fa-shield-virus"></i><span>DIGESA</span></div>
+                        <div class="cert-badge"><i class="fas fa-leaf"></i><span>ISO 14001</span></div>
+                        <div class="cert-badge"><i class="fas fa-hard-hat"></i><span>SCTR</span></div>
+                        <div class="cert-badge" style="font-weight: 900; font-size: 1.2rem;">MEGA</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2026 INDIGO SSG. Todos los derechos reservados. | <span
+                            style="color: var(--accent);">Calidad Garantizada</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
